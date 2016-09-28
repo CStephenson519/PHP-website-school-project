@@ -1,0 +1,134 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(bootstrap.min.css);
+@font-face {
+    font-family: Catull;
+    src: url(../fonts/Catull.ttf);
+}
+@font-face {
+    font-family: Patrick;
+    src: url(../fonts/PatrickHand-Regular.ttf);
+}
+@font-face {
+    font-family: Hallelujah;
+    src: url(../fonts/gloriahallelujah.ttf);
+}
+
+h1{
+    padding:.2em;
+	color:grey;
+	text-shadow:2px 2px black;
+}
+
+.hallelujah h1{
+    font-size: 2em;
+    font-family: Papyrus;
+	color: grey;
+}
+
+.patrick h1{
+    font-size: 5em;
+    font-family: Patrick;
+
+}
+
+.hallelujah{
+    width:45em;
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+    padding-bottom: 1em;
+}
+
+.patrick img {
+    width:60em;
+}
+
+img{
+    
+    max-width:100%;
+}
+
+.hallelujah img{
+    max-height: 400px;
+    display: block;
+    margin: 0 auto;
+}
+#homelogo{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:0em;
+	padding-top:0em;
+}
+@-webkit-keyframes redPulse {
+    from { -webkit-filter: drop-shadow(0px 0px 20px rgba(7,219,10,1)); filter: url(shadow.svg#drop-shadow); }
+    50% { -webkit-filter: drop-shadow(0px 0px 20px rgba(7,219,10,1)); filter: url(shadow.svg#drop-shadow); }
+    to { -webkit-filter: drop-shadow(0px 0px 20px rgba(23,23,23,1)); filter: url(shadow.svg#drop-shadow); }
+}
+.glow {
+    -webkit-animation-name: redPulse;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+
+.navbar-brand {
+    font-family: Impact;
+	font-size:2em;
+	text-shadow: 2px 2px black;
+}
+.navbar{
+	background-color:transparent;
+}
+
+.bookmark{
+	font-family: Impact;
+	color: grey;
+	margin-left: 16%;
+	margin-right: 14.5%;
+	margin-bottom: 40%;
+	text-align: center;
+	font-size:1.2em;
+}
+p{
+	text-shadow:2px 2px black;
+	color:grey;
+}
+ nav{
+	background-color: red;
+}
+body{
+    margin-top: 5em;
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.row {
+    padding: .2em 1em;
+}
+
+.carousel {
+    padding: 1em;
+    margin: 1em 0;
+}
+
+.footer {
+    padding: 0 1em;
+	color:grey;
+	text-shadow:2px 2px black;
+}
+
+.carousel-control {
+    width: auto;
+    top: 33%;
+}
+
+canvas{
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea{
+    width: 100%;
+}
