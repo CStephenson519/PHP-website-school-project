@@ -1,0 +1,76 @@
+<?php
+$this->data["title"] = "how about this";
+$this->layout("_layout.phtml");
+?>
+<div class="product">
+    <div class="hallelujah">
+        <img src="images/planbHallelujah.svg" alt="plan-b" title="plan-b" />
+        <h1>walk your best friend when you can't</h1>
+    </div>
+    <div class="row container">
+
+        <div class="col-md-8">single walk 1/2 hour</div>
+        <div class="col-md-3"><span class="pull-right">$17</span></div>
+        <div class="col-md-1"><button class="btn btn-primary btn-large">Add to cart</button></div>
+    </div>
+    <div class="row container">
+
+        <div class="col-md-8">1/2 hour walk 3 times per week</div>
+        <div class="col-md-3"><span class="pull-right">$49</span></div>
+        <div class="col-md-1"><button class="btn btn-primary btn-large">Add to cart</button></div>
+    </div>
+    <div class="row container">
+
+        <div class="col-md-8">1/2 hour walk 5 times per week paying monthly</div>
+        <div class="col-md-3"><span class="pull-right">$299</span></div>
+        <div class="col-md-1"><button class="btn btn-primary btn-large">Add to cart</button></div>
+    </div>
+</div>
+<div data-ride="carousel" class="carousel slide" id="myCarousel2">
+    <div id="myCarousel2PlaceHolder" class="carousel-inner"><div class="item active">
+        <div class="col-md-3">
+            <a href="#1/1">
+                <img alt="dog walking" src="images/thumbs/canstockphotosheppardwithowner.png" title="dog walking">
+                dog walking
+            </a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="#1/3">
+                <img alt="cat visits" src="images/thumbs/canstockphotoladywithcat.png" title="cat visits">
+                cat visits
+            </a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="#1/2">
+                <img alt="sleepovers" src="images/thumbs/canstockphotosleepinglab.png" title="sleepovers">
+                sleepovers
+            </a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="#1/4">
+                <img alt="crates" src="images/thumbs/NatalieMaynorDogsInCrate.png" title="crates">
+                crates
+            </a>
+        </div>
+        </div><div class="item">
+        <div class="col-md-3">
+            <a href="#1/5">
+                <img alt="vet visits" src="images/thumbs/JeffreyBeallVetAndCat.png" title="vet visits">
+                vet visits
+            </a>
+        </div>
+
+        </div></div>
+    <a data-slide="prev" href="#myCarousel2" class="left carousel-control"><i class="fa fa-arrow-left"></i></a>
+    <a data-slide="next" href="#myCarousel2" class="right carousel-control"><i class="fa fa-arrow-right"></i></a>
+</div>
+<script>
+    jQuery("document").ready(function() {
+        jQuery("#myCarousel2").carousel({
+            interval : false
+        });
+    });
+</script>

@@ -1,0 +1,9 @@
+{
+    "name": "rhildred/oauth2",
+    "license": "MIT",
+    "autoload": {
+        "psr-0": {
+            "": ""
+        }
+    }
+}

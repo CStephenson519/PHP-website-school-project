@@ -1,0 +1,14 @@
+{
+    "name": "rhildred/editable",
+    "autoload": {
+        "psr-0": {
+            "RHildred\\Editable": "src",
+            "kbjr": "src"
+        }
+    },
+    "require": {
+        "michelf/php-markdown": "*"
+    },
+    "minimum-stability":"dev",
+    "license":"MIT"
+}

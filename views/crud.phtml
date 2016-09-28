@@ -1,0 +1,135 @@
+<?php
+$this->data["title"]="Ya Mon Catering: privacy";
+$this->layout("_layout.phtml");
+?>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script>
+    var app = angular.module("myApp", []).controller("myCtrl", function ($scope, $http){
+        function failure(err){
+            alert(err);
+        }
+        function getProducts(){
+            $http.get("/crud/products").success(function(aProducts){
+                $scope.products = aProducts;
+            }).error(failure);
+        }
+        $scope.products = [];
+        $scope.currentProduct = {};
+        $scope.nCurrent = -1;
+        // retrieve initial list
+        getProducts();
+        $scope.editProduct = function(nProduct){
+            // get ready to show the dialog
+            angular.extend($scope.currentProduct, $scope.products[nProduct]);
+            $scope.nCurrent = nProduct;
+            $scope.title="Edit Product";
+        };
+        $scope.checkDelete = function(nProduct){
+            // get ready to show the dialog
+            $scope.nCurrent = nProduct;
+            angular.extend($scope.currentProduct, $scope.products[nProduct]);
+        };
+        $scope.addProduct = function(){
+            // get ready to show the dialog
+            $scope.currentProduct = {};
+            $scope.nCurrent = -1;
+            $scope.title="Add Product";
+        };
+        $scope.saveProduct = function(){
+            if($scope.nCurrent == -1){
+                // then add a new product to the list
+                $http.post("/crud/products", $scope.currentProduct).success(function(oProduct){
+                    $scope.products.push(oProduct);
+                }).error(failure);
+            }else{
+                // copy the product back in to the list
+                $http.post("/crud/products/" + $scope.currentProduct.productID, $scope.currentProduct).success(function(oProduct){
+                    $scope.products[$scope.nCurrent] = oProduct;
+                }).error(failure);
+            }
+        };
+        $scope.deleteProduct = function(){
+            // remove the product from the list
+            $http.delete("/crud/products/" + $scope.currentProduct.productID).success(function(){
+                $scope.products.splice($scope.nCurrent, 1);
+            }).error(failure);
+        };
+    });
+
+
+</script>
+<div class="bookmark container" ng-app="myApp" ng-controller="myCtrl">
+    <h1>Menu Maintenance</h1>
+    <div class="row">
+        <h3 class="col-md-2">Name</h3><h3 class="col-md-6">Description</h3>
+    </div>
+    <div class="row" ng-repeat="product in products track by $index">
+        <div class="col-md-2">{{product.name}}</div><div class="col-md-6">{{product.description}}</div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-success btn-large" data-toggle="modal" data-target="#createUpdate" ng-click="editProduct($index)"><i class="fa fa-pencil"></i>&nbsp;Edit</button>
+            <button type="button" class="btn btn-danger btn-large" data-toggle="modal" data-target="#delete" ng-click="checkDelete($index)"><i class="fa fa-remove"></i>&nbsp;Delete</button>
+        </div>
+    </div>
+    <div class="row">
+        <button type="button" class="btn btn-warning btn-large" data-toggle="modal" data-target="#createUpdate" ng-click="addProduct()"><i class="fa fa-plus"></i>&nbsp;Add</button>
+
+    </div>
+    <!-- Create/Update -->
+    <div class="modal fade" id="createUpdate" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{title}}</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="productname">Name:</label>
+                            <div class="col-sm-9">
+                                <input ng-model="currentProduct.name" placeholder="product name" id="productname" class="form-control"/>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="productdescription">Description:</label>
+                            <div class="col-sm-9">
+                                <textarea ng-model="currentProduct.description" placeholder="product description" id="productdescription" class="form-control"></textarea>
+                            </div>
+                          </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveProduct()"><i class="fa fa-database"></i>&nbsp;Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Delete -->
+    <div class="modal fade" id="delete" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Are You Sure?</h4>
+                </div>
+                <div class="modal-body">
+                    <p>About to Delete "{{currentProduct.name}}".</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deleteProduct()"><i class="fa fa-remove"></i>&nbsp;Delete</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<?php
+$this->data["title"] = "Our Menu
+" . $this->data["product"]->name;
+$this->layout("_layout.phtml");
+?>
+<div itemscope itemtype="http://schema.org/Product" class="product">
+    <div class="hallelujah">
+        <h1 itemprop="name"><?php echo $this->data["product"]->name; ?></h1>
+        <img itemprop="image" src="/<?php echo $this->data["images"][0]->URL ?>" alt="<?php echo $this->data["product"]->name; ?>" title="<?php echo $this->data["product"]->name; ?>" />
+        <h1 itemprop="description"><?php echo $this->data["product"]->description; ?></h1>
+    </div>
+    <?php foreach($this->data["offers"] as $oOffer){ ?>
+    <div class="row container" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+        <div class="col-md-8"><?php echo $oOffer->description; ?></div>
+        <meta itemprop="priceCurrency" content="<?php echo $oOffer->priceCurrency; ?>" />
+        <div class="col-md-3"><span class="pull-right" itemprop="price">$<?php echo $oOffer->price * pow(10, $oOffer->priceExponent); ?></span></div>
+        <div class="col-md-1"><button class="btn btn-primary btn-large">Add to cart</button></div>
+    </div>
+    <?php } ?>
+</div>
+<div data-ride="carousel" class="carousel slide" id="myCarousel2">
+    <div id="myCarousel2PlaceHolder" class="carousel-inner">
+    <?php 
+    $aProducts = $this->data["products"];
+    $nProducts = count($aProducts);
+    $nCurrent = 0;
+    while($nCurrent < $nProducts){ ?>
+        <div class="item<?php if($nCurrent == 0) echo " active"; ?>">
+            <?php
+            for($n = 0; $n < 4 && $nCurrent < $nProducts; $n++){ 
+                $oProduct = $aProducts[$nCurrent];
+            ?>
+                <div class="col-md-3">
+                    <a href="/products/<?php echo $oProduct->productID; ?>">
+                        <img alt="<?php echo $oProduct->name ?>" src="/<?php echo $oProduct->image; ?>" title="<?php echo $oProduct->name ?>">
+                        <p id="titles"><?php echo $oProduct->name ?></p>
+                    </a>
+                </div>
+                
+            <?php 
+                $nCurrent++;
+            } ?>
+
+        </div>
+    <?php } ?>
+    </div>
+    <a data-slide="prev" href="#myCarousel2" class="left carousel-control"><i class="fa fa-arrow-left"></i></a>
+    <a data-slide="next" href="#myCarousel2" class="right carousel-control"><i class="fa fa-arrow-right"></i></a>
+</div>
+<script>
+    jQuery("document").ready(function() {
+        jQuery("#myCarousel2").carousel({
+            interval : false
+        });
+    });
+</script>
