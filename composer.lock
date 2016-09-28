@@ -1,0 +1,202 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "6b2d89aaac630f9c282a2dc17be30687",
+    "content-hash": "b76ebcec377caa3efa44ea0d41b4c659",
+    "packages": [
+        {
+            "name": "michelf/php-markdown",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michelf/php-markdown.git",
+                "reference": "e1aabe18173231ebcefc90e615565742fc1c7fd9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/e1aabe18173231ebcefc90e615565742fc1c7fd9",
+                "reference": "e1aabe18173231ebcefc90e615565742fc1c7fd9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-lib": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Michelf": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "John Gruber",
+                    "homepage": "http://daringfireball.net/"
+                },
+                {
+                    "name": "Michel Fortin",
+                    "email": "michel.fortin@michelf.ca",
+                    "homepage": "https://michelf.ca/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Markdown",
+            "homepage": "https://michelf.ca/projects/php-markdown/",
+            "keywords": [
+                "markdown"
+            ],
+            "time": "2015-03-01 12:03:08"
+        },
+        {
+            "name": "rhildred/editable",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rhildred/editable.git",
+                "reference": "cd8725f645ce76726ba730cbabc7b6ec70f2aa02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rhildred/editable/zipball/cd8725f645ce76726ba730cbabc7b6ec70f2aa02",
+                "reference": "cd8725f645ce76726ba730cbabc7b6ec70f2aa02",
+                "shasum": ""
+            },
+            "require": {
+                "michelf/php-markdown": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "RHildred\\Editable": "src",
+                    "kbjr": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2015-01-11 14:58:51"
+        },
+        {
+            "name": "rhildred/oauth2",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rhildred/oauth2.git",
+                "reference": "b9b2c8241c25a548def5ebd5288849345ebb8c06"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rhildred/oauth2/zipball/b9b2c8241c25a548def5ebd5288849345ebb8c06",
+                "reference": "b9b2c8241c25a548def5ebd5288849345ebb8c06",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2015-12-07 05:11:01"
+        },
+        {
+            "name": "rhildred/slimphpviews",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rhildred/slimphpviews.git",
+                "reference": "3a6645c672d0c011f774221f282f8aafa9d42ddc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rhildred/slimphpviews/zipball/3a6645c672d0c011f774221f282f8aafa9d42ddc",
+                "reference": "3a6645c672d0c011f774221f282f8aafa9d42ddc",
+                "shasum": ""
+            },
+            "require": {
+                "slim/slim": "2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPView": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2015-08-21 03:11:44"
+        },
+        {
+            "name": "slim/slim",
+            "version": "2.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slimphp/Slim.git",
+                "reference": "20a02782f76830b67ae56a5c08eb1f563c351a37"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slimphp/Slim/zipball/20a02782f76830b67ae56a5c08eb1f563c351a37",
+                "reference": "20a02782f76830b67ae56a5c08eb1f563c351a37",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "ext-mcrypt": "Required for HTTP cookie encryption"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Slim": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Lockhart",
+                    "email": "info@joshlockhart.com",
+                    "homepage": "http://www.joshlockhart.com/"
+                }
+            ],
+            "description": "Slim Framework, a PHP micro framework",
+            "homepage": "http://github.com/codeguy/Slim",
+            "keywords": [
+                "microframework",
+                "rest",
+                "router"
+            ],
+            "time": "2015-03-08 18:41:17"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "rhildred/slimphpviews": 20,
+        "rhildred/editable": 20,
+        "rhildred/oauth2": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

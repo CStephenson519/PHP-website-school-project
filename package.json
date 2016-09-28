@@ -1,0 +1,33 @@
+{
+  "name": "dianne",
+  "version": "1.0.0",
+  "description": "This is Dianne's long awaited web site",
+  "keywords": [
+    "reiki",
+    "Karma",
+    "balance",
+    "dog"
+  ],
+  "author": {
+    "name": "Rich Hildred",
+    "email": "rhildred@gmail.com",
+    "url": "http://syndicateme.net/"
+  },
+  "homepage": "https://github.com/rhildred/js-toolbox/tree/master/google-login",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rhildred/js-toolbox.git"
+  },
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+  "dependencies": {
+    "js-toolbox": "*",
+    "render-async": "*"
+  },
+  "scripts": {},
+  "devDependencies": {},
+  "bundleDependencies": [],
+  "main": "server.js"
+}
